@@ -9,7 +9,7 @@ export default function Hero() {
   const wa = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hola, quiero probar Amelia para facturar.')}`
 
   return (
-    <section id="inicio" className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section id="inicio" className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
       {/* Fondo: malla sutil + halo teal, sin gradient-text ni glass */}
       <div className="absolute inset-0 -z-10 grid-noise" aria-hidden="true" />
       <div

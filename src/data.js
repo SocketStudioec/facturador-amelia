@@ -5,6 +5,7 @@ export const NAV = [
   { label: 'Plataforma', href: '#plataforma' },
   { label: 'Módulos', href: '#modulos' },
   { label: 'Facturación', href: '#facturacion' },
+  { label: 'Calculadora', href: '#calculadora' },
   { label: 'Planes', href: '#planes' },
   { label: 'Partners', href: '#partners' },
 ]
@@ -196,6 +197,14 @@ export const FAQ = [
     q: '¿Tengo que pagar por adelantado?',
     a: 'No. Trabajamos sin pago anticipado y con planes pensados para tu volumen real, además de acompañamiento y capacitación.',
   },
+]
+
+// Prueba social — números reales de la comunidad Begroup (redes oficiales)
+export const COMUNIDAD = [
+  { value: '+5', label: 'años en el mercado ecuatoriano' },
+  { value: '7.7K', label: 'comunidad en TikTok' },
+  { value: '3.4K', label: 'seguidores en Facebook' },
+  { value: '2.2K', label: 'suscriptores en YouTube' },
 ]
 
 export const TESTIMONIOS = [

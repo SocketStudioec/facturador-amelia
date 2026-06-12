@@ -12,7 +12,14 @@ export default function Precios() {
             Un plan para cada etapa de tu negocio
           </h2>
           <p className="mt-4 text-lg text-ink-soft text-pretty">
-            Sin pago anticipado. Eliges según tu volumen de emisión y creces cuando lo necesites.
+            Sin pago anticipado y sin permanencia. Eliges según tu volumen y creces cuando lo necesites.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.04} className="mx-auto mt-8 max-w-3xl rounded-2xl border border-teal-200 bg-teal-50 px-6 py-4 text-center">
+          <p className="text-sm font-semibold text-navy sm:text-base">
+            Una sola cuenta reemplaza tu facturador, tu Excel de inventario y tu sistema contable.
+            <span className="font-normal text-ink-soft"> Pagas un servicio, no tres.</span>
           </p>
         </Reveal>
 

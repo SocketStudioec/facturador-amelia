@@ -24,10 +24,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'border-b border-surface-line/80 bg-surface/85 backdrop-blur-md'
-          : 'border-b border-transparent bg-transparent'
+          : 'border-b border-transparent bg-surface/80 backdrop-blur-sm'
       }`}
     >
       <div className="container-xl flex h-[4.5rem] items-center justify-between gap-6">
