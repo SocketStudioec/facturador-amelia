@@ -1,12 +1,12 @@
-// Contenido del sitio — Amelia (Facturador electrónico · Begroup EC)
-// Datos derivados de la información pública del producto.
+// Contenido del sitio — Amelia · Plataforma Contable (un producto de Begroup)
+// Información derivada del código real (frontend Angular + backend Node/Express) y de begroupec.com.
 
 export const NAV = [
-  { label: 'Producto', href: '#producto' },
-  { label: 'Documentos', href: '#documentos' },
-  { label: 'Cómo funciona', href: '#como-funciona' },
+  { label: 'Plataforma', href: '#plataforma' },
+  { label: 'Módulos', href: '#modulos' },
+  { label: 'Facturación', href: '#facturacion' },
   { label: 'Planes', href: '#planes' },
-  { label: 'Distribuidores', href: '#distribuidores' },
+  { label: 'Partners', href: '#partners' },
 ]
 
 export const CONTACT = {
@@ -14,7 +14,7 @@ export const CONTACT = {
   whatsappLabel: '+593 99 000 0000',
   email: 'ventas@amelia.ec',
   site: 'amelia.ec',
-  company: 'Begroup EC',
+  company: 'Begroup · Grupo Empresarial',
 }
 
 export const SOCIAL = [
@@ -25,10 +25,23 @@ export const SOCIAL = [
 ]
 
 export const STATS = [
-  { value: '+5', label: 'años emitiendo en Ecuador' },
-  { value: 'SRI', label: 'autorización en línea' },
-  { value: '4', label: 'plataformas: web, iOS, Android, Mac' },
-  { value: '24/7', label: 'comprobantes disponibles' },
+  { value: 'Todo‑en‑uno', label: 'factura, contabiliza y controla en un sistema' },
+  { value: 'SRI', label: 'autorización de comprobantes en línea' },
+  { value: 'Multiempresa', label: 'administra varias empresas y sucursales' },
+  { value: 'Web · iOS · Android', label: 'la misma cuenta en todos tus dispositivos' },
+]
+
+// Módulos reales de la plataforma (derivados del código de la app)
+export const MODULOS = [
+  { name: 'Facturación electrónica', desc: 'Emite y autoriza comprobantes ante el SRI en segundos.', icon: 'FileText' },
+  { name: 'Contabilidad', desc: 'Asientos, mayores y estados financieros siempre al día.', icon: 'BookOpen' },
+  { name: 'Inventario', desc: 'Controla stock, kardex y costos por producto.', icon: 'Boxes' },
+  { name: 'Cartera y cuentas por cobrar', desc: 'Gestiona deudas, abonos y conciliación de clientes.', icon: 'Wallet' },
+  { name: 'Compras y ventas', desc: 'Importa tus comprobantes de compra y venta del SRI.', icon: 'ShoppingCart' },
+  { name: 'Nómina', desc: 'Roles de pago y beneficios de tu equipo sin hojas de cálculo.', icon: 'Users' },
+  { name: 'Conciliación bancaria', desc: 'Cruza tus movimientos de banco con tu contabilidad.', icon: 'Landmark' },
+  { name: 'Facturación recurrente', desc: 'Cobros automáticos para suscripciones y servicios.', icon: 'Repeat' },
+  { name: 'Reportes y dashboard', desc: 'Indicadores de tu negocio en gráficos en tiempo real.', icon: 'BarChart3' },
 ]
 
 export const DOCUMENTOS = [
@@ -40,11 +53,22 @@ export const DOCUMENTOS = [
   { name: 'Guías de remisión', desc: 'Sustenta el traslado de mercadería ante el SRI.', icon: 'Truck' },
 ]
 
+// Beneficios anclados en funciones reales del backend
 export const BENEFICIOS = [
   {
-    title: 'Emite en segundos',
-    desc: 'Crea, autoriza y transmite comprobantes al SRI en un mismo flujo, sin saltar entre sistemas.',
-    icon: 'Zap',
+    title: 'Datos del cliente al instante',
+    desc: 'Escribe el RUC y Amelia completa razón social y dirección consultando el padrón. Menos tipeo, cero errores.',
+    icon: 'Search',
+  },
+  {
+    title: 'Firma electrónica integrada',
+    desc: 'Carga tu firma una sola vez. Amelia valida su vigencia y firma cada comprobante por ti.',
+    icon: 'PenTool',
+  },
+  {
+    title: 'RIDE + XML automáticos',
+    desc: 'Cada comprobante genera su PDF y su XML listos para descargar o archivar.',
+    icon: 'FileCode2',
   },
   {
     title: 'Envía por WhatsApp y correo',
@@ -52,24 +76,14 @@ export const BENEFICIOS = [
     icon: 'Send',
   },
   {
-    title: 'Multidispositivo real',
-    desc: 'La misma cuenta en web, iPhone, Android y Mac. Empieza en la oficina, termina en la calle.',
-    icon: 'Smartphone',
+    title: 'Importa tus compras y ventas',
+    desc: 'Trae tus comprobantes directo del SRI y concílialos con tu contabilidad.',
+    icon: 'Download',
   },
   {
     title: 'Autorización SRI en línea',
-    desc: 'Validación automática y estado de cada comprobante visible en todo momento.',
+    desc: 'Validación automática y estado de cada documento visible en todo momento.',
     icon: 'BadgeCheck',
-  },
-  {
-    title: 'Reportes claros',
-    desc: 'Consulta ventas, retenciones y descargas masivas listas para tu contador.',
-    icon: 'BarChart3',
-  },
-  {
-    title: 'Soporte que responde',
-    desc: 'Capacitación y acompañamiento personalizado incluidos, sin costos ocultos.',
-    icon: 'Headset',
   },
 ]
 
@@ -81,18 +95,18 @@ export const PASOS = [
   },
   {
     step: '02',
-    title: 'Configura tu negocio',
-    desc: 'Establecimiento, punto de emisión y tus productos o servicios frecuentes.',
+    title: 'Configura tu empresa',
+    desc: 'Establecimiento, punto de emisión, productos e impuestos quedan listos una sola vez.',
   },
   {
     step: '03',
-    title: 'Emite el comprobante',
-    desc: 'Llena los datos, Amelia calcula IVA y retenciones y lo autoriza ante el SRI.',
+    title: 'Opera tu negocio',
+    desc: 'Factura, registra compras, controla inventario y lleva tu contabilidad en un mismo lugar.',
   },
   {
     step: '04',
-    title: 'Envía y archiva',
-    desc: 'Comparte por WhatsApp o correo. Todo queda respaldado y descargable.',
+    title: 'Mide y decide',
+    desc: 'Consulta reportes y dashboards en tiempo real para tomar mejores decisiones.',
   },
 ]
 
@@ -103,79 +117,100 @@ export const PLANES = [
     highlight: false,
     features: [
       'Facturas y notas de crédito',
+      'Firma electrónica integrada',
       'Envío por correo y WhatsApp',
       'App web + móvil',
-      'Soporte por chat',
     ],
     cta: 'Solicitar plan',
   },
   {
     name: 'Negocio',
-    tagline: 'Para PYMES con volumen',
+    tagline: 'La plataforma contable completa',
     highlight: true,
     features: [
       'Todos los comprobantes electrónicos',
-      'Retenciones y guías de remisión',
-      'Reportes y descargas masivas',
+      'Contabilidad, inventario y cartera',
+      'Compras, ventas y conciliación bancaria',
+      'Reportes y dashboard en tiempo real',
       'Múltiples usuarios y establecimientos',
-      'Soporte y capacitación personalizada',
     ],
     cta: 'Solicitar plan',
   },
   {
     name: 'Contador',
-    tagline: 'White-label para profesionales',
+    tagline: 'White‑label para profesionales',
     highlight: false,
     features: [
-      'Gestiona la cartera de tus clientes',
+      'Administra la cartera de tus clientes',
+      'Multiempresa desde un solo panel',
       'Precios preferenciales sin pago anticipado',
-      'Tu marca sobre la plataforma',
-      'Incentivos por crecimiento',
+      'Soporte y capacitación dedicados',
     ],
-    cta: 'Ser distribuidor',
+    cta: 'Quiero ser partner',
   },
 ]
 
+// Programa de Partners — datos reales de begroupec.com/partners
+export const PARTNERS = {
+  pitch: 'Vende firmas electrónicas y Amelia con el respaldo de Begroup. Define tu propio margen y crece sin invertir en inventario.',
+  ventajas: [
+    { icon: 'Tag', title: 'Define tu margen', desc: 'Precios preferenciales para distribuidores; tú fijas tu precio de venta.' },
+    { icon: 'ShieldOff', title: 'Sin precompra ni cuotas', desc: 'Sin cuota mensual, sin costo de activación y sin compra obligatoria.' },
+    { icon: 'GraduationCap', title: 'Capacitación incluida', desc: 'Aprende requisitos, vigencias y manejo comercial para vender mejor.' },
+    { icon: 'Headset', title: 'Soporte y acompañamiento', desc: 'Te acompañamos para gestionar solicitudes y resolver dudas.' },
+    { icon: 'Gift', title: 'Premios y campañas', desc: 'Participa en promociones, obsequios y campañas especiales.' },
+    { icon: 'Globe', title: '100% digital', desc: 'Vende y atiende a tus clientes en línea, en todo el Ecuador.' },
+  ],
+  pasos: [
+    'Regístrate con tus datos básicos',
+    'Recibe la asesoría de un asesor del programa',
+    'Capacítate en precios y proceso de venta',
+    'Empieza a vender a tus clientes y contactos',
+  ],
+  requisitos: ['Ser mayor de edad', 'Cédula vigente', 'Correo electrónico', 'Número de WhatsApp'],
+  incentivo: 'Distribuidores activos que venden 20–50 firmas al mes generan entre $250 y $650 de margen adicional mensual.',
+}
+
 export const FAQ = [
   {
+    q: '¿Amelia es solo un facturador?',
+    a: 'No. Amelia es una plataforma contable: además de la facturación electrónica incluye contabilidad, inventario, cartera, compras, ventas, nómina y conciliación bancaria en un mismo sistema.',
+  },
+  {
     q: '¿Los comprobantes son válidos ante el SRI?',
-    a: 'Sí. Amelia genera, firma y transmite cada comprobante al SRI y conserva su número de autorización. Tienes el estado de cada documento en tiempo real.',
+    a: 'Sí. Amelia genera, firma y transmite cada comprobante al SRI y conserva su número de autorización, con el estado de cada documento en tiempo real.',
   },
   {
     q: '¿Necesito firma electrónica?',
-    a: 'Sí, la firma electrónica es un requisito del SRI para emitir. En Begroup también puedes obtenerla con vigencia de 1 a 5 años y la cargas directamente en Amelia.',
+    a: 'Sí, es un requisito del SRI. La cargas una sola vez en Amelia y la plataforma valida su vigencia y firma por ti. En Begroup también puedes obtenerla con vigencia de 1 a 5 años.',
   },
   {
     q: '¿Funciona desde el celular?',
-    a: 'Completamente. Amelia está en web, iOS, Android y Mac con la misma cuenta. Puedes emitir y enviar comprobantes desde donde estés.',
+    a: 'Completamente. Amelia está en web, iOS y Android con la misma cuenta. Puedes emitir y consultar desde donde estés.',
+  },
+  {
+    q: '¿Sirve para llevar la contabilidad de varias empresas?',
+    a: 'Sí. Amelia es multiempresa: ideal para contadores que administran la cartera de varios clientes desde un solo panel, con opción white‑label.',
   },
   {
     q: '¿Tengo que pagar por adelantado?',
-    a: 'No. Trabajamos sin pago anticipado y con planes pensados para tu volumen real de emisión, además de acompañamiento y capacitación.',
-  },
-  {
-    q: '¿Sirve para contadores con varios clientes?',
-    a: 'Sí. El plan Contador es white-label: administras la cartera de tus clientes, con precios preferenciales e incentivos por crecimiento.',
-  },
-  {
-    q: '¿Puedo enviar la factura por WhatsApp?',
-    a: 'Sí. Una vez autorizado, compartes el comprobante por WhatsApp o correo en un toque, con su PDF y XML.',
+    a: 'No. Trabajamos sin pago anticipado y con planes pensados para tu volumen real, además de acompañamiento y capacitación.',
   },
 ]
 
 export const TESTIMONIOS = [
   {
-    quote: 'Pasé de pelear con un sistema lento a emitir facturas desde el celular en la entrega. Mis clientes reciben todo por WhatsApp al instante.',
+    quote: 'Antes saltaba entre el facturador, el Excel del inventario y otro sistema contable. Con Amelia todo está en un solo lugar y mi contadora lo agradece.',
     name: 'María José Andrade',
     role: 'Emprendedora · Ambato',
   },
   {
-    quote: 'Como contadora manejo varios RUC. El modo white-label me dejó ofrecer facturación con mi propia marca y sumar ingresos.',
+    quote: 'Manejo varias empresas y el modo multiempresa me cambió la vida. Emito, concilio bancos y saco reportes sin salir de la plataforma.',
     name: 'Daniela Vásquez',
     role: 'Contadora · Quito',
   },
   {
-    quote: 'Las retenciones que antes me tomaban la tarde ahora salen en minutos y sin rebotes del SRI. El soporte responde de verdad.',
+    quote: 'Las retenciones que antes me tomaban la tarde ahora salen en minutos y sin rebotes del SRI. El soporte de Begroup responde de verdad.',
     name: 'Luis Carrión',
     role: 'Ferretería · Cuenca',
   },

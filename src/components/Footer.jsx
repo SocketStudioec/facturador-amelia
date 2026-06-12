@@ -10,8 +10,8 @@ export default function Footer() {
           <div>
             <Logo tone="light" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-100">
-              Amelia es el facturador electrónico de {CONTACT.company}: emite y envía tus comprobantes
-              autorizados por el SRI desde cualquier dispositivo.
+              Amelia es la plataforma contable de {CONTACT.company}: facturación electrónica,
+              contabilidad, inventario, cartera y nómina autorizadas por el SRI, en un solo sistema.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {SOCIAL.map((s) => (

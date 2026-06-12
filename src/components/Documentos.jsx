@@ -8,10 +8,10 @@ const ICONS = { FileText, FileMinus, FilePlus, ReceiptText, ShoppingBag, Truck }
 
 export default function Documentos() {
   return (
-    <section id="documentos" className="py-24 lg:py-28">
+    <section id="facturacion" className="py-24 lg:py-28">
       <div className="container-xl">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow">Comprobantes electrónicos</span>
+          <span className="eyebrow">Facturación electrónica</span>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-navy text-balance sm:text-4xl">
             Todos tus documentos del SRI, en un solo lugar
           </h2>

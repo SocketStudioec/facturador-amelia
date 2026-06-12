@@ -1,23 +1,23 @@
 import {
-  Zap, Send, Smartphone, BadgeCheck, BarChart3, Headset,
+  Search, PenTool, FileCode2, Send, Download, BadgeCheck,
 } from 'lucide-react'
 import { BENEFICIOS } from '../data'
 import Reveal, { Stagger, StaggerItem } from './Reveal'
 
-const ICONS = { Zap, Send, Smartphone, BadgeCheck, BarChart3, Headset }
+const ICONS = { Search, PenTool, FileCode2, Send, Download, BadgeCheck }
 
 export default function Beneficios() {
   return (
-    <section id="producto" className="bg-surface-warm py-24 lg:py-28">
+    <section id="plataforma" className="bg-surface-warm py-24 lg:py-28">
       <div className="container-xl">
         <Reveal className="max-w-2xl">
           <span className="eyebrow">Por qué Amelia</span>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-navy text-balance sm:text-4xl">
-            Hecho para facturar rápido y sin fricción
+            Pensada para que factures rápido y sin fricción
           </h2>
           <p className="mt-4 text-lg text-ink-soft text-pretty">
-            Menos clics, menos errores y cero saltos entre programas. Lo que tu negocio necesita para
-            cumplir con el SRI sin perder tiempo.
+            Cada detalle está resuelto en el sistema: desde traer los datos del cliente por su RUC
+            hasta firmar y autorizar ante el SRI, sin saltar entre programas.
           </p>
         </Reveal>
 

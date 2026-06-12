@@ -1,6 +1,10 @@
 node_modules
 dist
 dist-ssr
+
+# Material de referencia del producto (código real de Amelia) — NO publicar
+AmeliaApp-master-amelia/
+AmeliaRestServer-master-amelia/
 *.local
 .env
 .env.*

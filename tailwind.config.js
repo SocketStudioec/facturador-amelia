@@ -7,48 +7,48 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Teal — acción principal
+        // Marca Amelia — azul real #4154F1 (token 'teal' conservado por compatibilidad)
         teal: {
-          DEFAULT: '#0FB5A6',
-          50:  '#ECFDFA',
-          100: '#CFFAF2',
-          200: '#9DF2E6',
-          300: '#5EE6D6',
-          400: '#27CDBC',
-          500: '#0FB5A6',
-          600: '#0B8F84',
-          700: '#0C726B',
-          800: '#0E5B56',
-          900: '#0F4B47',
+          DEFAULT: '#4154F1',
+          50:  '#EEF1FE',
+          100: '#DCE2FD',
+          200: '#BBC6FB',
+          300: '#93A4F8',
+          400: '#6B80F5',
+          500: '#4154F1',
+          600: '#2A3AEB',
+          700: '#2230C4',
+          800: '#1E2A9E',
+          900: '#1B2486',
         },
-        // Navy — tinta / superficies oscuras
+        // Tinta / superficies oscuras — índigo profundo Amelia
         navy: {
-          DEFAULT: '#0A2540',
-          50:  '#EEF2F7',
-          100: '#D6E0EC',
-          800: '#0F2E4D',
-          900: '#0A2540',
-          950: '#061829',
+          DEFAULT: '#1B2559',
+          50:  '#EEF0F7',
+          100: '#D7DBEC',
+          800: '#232F6B',
+          900: '#1B2559',
+          950: '#111738',
         },
-        // Acento cálido — usado con moderación
+        // Acento cian — del degradado de Begroup
         coral: {
-          DEFAULT: '#FF6B5C',
-          soft: '#FF8A7E',
+          DEFAULT: '#16C0E6',
+          soft: '#5BD6F0',
         },
         ink: {
-          DEFAULT: '#0B1F33',
-          soft: '#33485C',
-          muted: '#6B7E8F',
+          DEFAULT: '#161B36',
+          soft: '#3A416B',
+          muted: '#6B729A',
         },
         surface: {
-          DEFAULT: '#F6F9FB',
-          warm: '#F2F7F6',
+          DEFAULT: '#F6F8FE',
+          warm: '#F1F4FD',
           card: '#FFFFFF',
-          line: '#E3EAF0',
+          line: '#E3E7F4',
         },
       },
       fontFamily: {
-        display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },

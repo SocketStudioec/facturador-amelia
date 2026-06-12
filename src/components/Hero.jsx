@@ -26,7 +26,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-surface-line bg-white px-3.5 py-1.5 text-xs font-semibold text-ink-soft shadow-soft"
           >
             <ShieldCheck size={14} className="text-teal-600" />
-            Comprobantes autorizados por el SRI
+            Facturación autorizada por el SRI · un producto de Begroup
           </motion.span>
 
           <motion.h1
@@ -35,8 +35,8 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: easing, delay: 0.05 }}
             className="mt-6 font-display text-[2.6rem] font-extrabold leading-[1.04] tracking-tight text-navy text-balance sm:text-6xl"
           >
-            Tu factura electrónica,{' '}
-            <span className="text-teal-600">desde donde estés</span>.
+            La plataforma contable que{' '}
+            <span className="text-teal-600">factura por ti</span>.
           </motion.h1>
 
           <motion.p
@@ -45,9 +45,9 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: easing, delay: 0.12 }}
             className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft text-pretty"
           >
-            Amelia emite, autoriza y envía tus comprobantes electrónicos en segundos. Facturas,
-            retenciones y guías de remisión listas para tu cliente por WhatsApp o correo — en web,
-            iPhone, Android y Mac.
+            Amelia reúne tu facturación electrónica, contabilidad, inventario, cartera y nómina en un
+            solo sistema. Emite comprobantes autorizados por el SRI y envíalos por WhatsApp — desde
+            web, iPhone y Android.
           </motion.p>
 
           <motion.div
