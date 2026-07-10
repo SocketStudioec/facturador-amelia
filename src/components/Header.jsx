@@ -63,7 +63,7 @@ export default function Header({ isHome = true, current = null }) {
             Iniciar sesión
           </a>
           <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
-            Probar gratis
+            Hablar por WhatsApp
           </a>
         </div>
 
@@ -105,7 +105,7 @@ export default function Header({ isHome = true, current = null }) {
                 onClick={() => setOpen(false)}
                 className="btn-primary mt-2"
               >
-                Probar gratis
+                Hablar por WhatsApp
               </a>
             </nav>
           </motion.div>

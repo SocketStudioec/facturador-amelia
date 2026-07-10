@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 import { CONTACT } from '../data'
 
 export default function CTA() {
-  const wa = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Quiero empezar a facturar con Amelia.')}`
+  const wa = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hola, quiero información del Combo Promo Amelia.')}`
   return (
     <section className="py-20">
       <div className="container-xl">
@@ -31,7 +31,7 @@ export default function CTA() {
                 rel="noopener noreferrer"
                 className="btn inline-flex bg-white px-7 py-3.5 text-teal-700 shadow-float hover:bg-teal-50"
               >
-                Probar gratis <ArrowRight size={18} />
+                Quiero mi combo <ArrowRight size={18} />
               </a>
               <a
                 href="#planes"

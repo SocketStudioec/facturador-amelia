@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion'
-import { ShieldCheck, Apple, Play, Briefcase, Rocket, Building2 } from 'lucide-react'
+import { ShieldCheck, Apple, Play, Briefcase, Rocket, Building2, ArrowRight } from 'lucide-react'
 import InvoiceMock from './InvoiceMock'
-import { CONTACT, SEGMENTOS } from '../data'
+import { SEGMENTOS } from '../data'
 
 const SEGMENT_ICONS = { Briefcase, Rocket, Building2 }
 
 const easing = [0.16, 1, 0.3, 1]
 
 export default function Hero() {
-  const wa = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hola, quiero probar Amelia para facturar.')}`
-
   return (
     <section id="inicio" className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
       {/* Fondo: malla sutil + halo teal, sin gradient-text ni glass */}
@@ -56,7 +54,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: easing, delay: 0.15 }}
-            className="mt-6 flex flex-wrap gap-2"
+            className="mt-8 flex flex-wrap gap-3"
             role="group"
             aria-label="Elige tu perfil"
           >
@@ -65,29 +63,17 @@ export default function Hero() {
               return (
                 <a
                   key={s.id}
-                  href="#soluciones"
-                  onClick={() => window.dispatchEvent(new CustomEvent('amelia:segment', { detail: s.id }))}
-                  className="inline-flex items-center gap-2 rounded-full border border-surface-line bg-white px-4 py-2 text-sm font-semibold text-navy shadow-soft transition-colors hover:border-teal-400 hover:text-teal-700"
+                  href={`${import.meta.env.BASE_URL}${s.slug}/`}
+                  className="group inline-flex items-center gap-2.5 rounded-2xl border border-surface-line bg-white px-5 py-3.5 text-[15px] font-bold text-navy shadow-soft transition-all hover:-translate-y-0.5 hover:border-teal-400 hover:shadow-card"
                 >
-                  <Icon size={15} className="text-teal-600" aria-hidden="true" />
+                  <span className="grid h-8 w-8 place-items-center rounded-lg bg-teal-50 text-teal-600">
+                    <Icon size={16} aria-hidden="true" />
+                  </span>
                   {s.label}
+                  <ArrowRight size={16} className="text-teal-600 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </a>
               )
             })}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: easing, delay: 0.18 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
-          >
-            <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Probar gratis
-            </a>
-            <a href="#como-funciona" className="btn-ghost">
-              Ver cómo funciona
-            </a>
           </motion.div>
 
           <motion.div
