@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import AnnouncementBar from './components/AnnouncementBar'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import TrustBar from './components/TrustBar'
+import Soluciones from './components/Soluciones'
+import VideoPromo from './components/VideoPromo'
+import ComboPromo from './components/ComboPromo'
 import Beneficios from './components/Beneficios'
 import Modulos from './components/Modulos'
+import Destacados from './components/Destacados'
 import Documentos from './components/Documentos'
 import ComoFunciona from './components/ComoFunciona'
 import Calculadora from './components/Calculadora'
@@ -20,23 +22,24 @@ import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 
 export default function App() {
-  const [promo, setPromo] = useState(true)
-
   return (
     <>
       <a
-        href="#plataforma"
+        href="#soluciones"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
       >
         Saltar al contenido
       </a>
-      {promo && <AnnouncementBar onClose={() => setPromo(false)} />}
       <Header />
       <main>
         <Hero />
         <TrustBar />
-        <Beneficios />
+        <VideoPromo />
+        <Soluciones />
+        <ComboPromo />
         <Modulos />
+        <Destacados />
+        <Beneficios />
         <Documentos />
         <ComoFunciona />
         <Calculadora />

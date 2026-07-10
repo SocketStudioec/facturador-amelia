@@ -1,12 +1,12 @@
 import {
-  FileText, BookOpen, Boxes, Wallet, ShoppingCart, Users,
-  Landmark, Repeat, BarChart3,
+  FileText, NotebookPen, ShoppingCart, Archive, PenTool,
+  CalendarCheck, Scale, Landmark, Boxes,
 } from 'lucide-react'
 import { MODULOS } from '../data'
 import Reveal, { Stagger, StaggerItem } from './Reveal'
 
 const ICONS = {
-  FileText, BookOpen, Boxes, Wallet, ShoppingCart, Users, Landmark, Repeat, BarChart3,
+  FileText, NotebookPen, ShoppingCart, Archive, PenTool, CalendarCheck, Scale, Landmark, Boxes,
 }
 
 export default function Modulos() {
@@ -19,8 +19,8 @@ export default function Modulos() {
             Todo tu negocio, en módulos que conversan entre sí
           </h2>
           <p className="mt-4 text-lg text-ink-soft text-pretty">
-            Amelia no es solo un facturador: es la plataforma contable que conecta tu facturación con
-            tu contabilidad, inventario, cartera y nómina. Lo que registras una vez, sirve en todo.
+            Amelia no es solo un facturador: conecta tu facturación con tus compras, inventarios,
+            declaraciones y respaldos digitales. Lo que registras una vez, sirve en todo.
           </p>
         </Reveal>
 

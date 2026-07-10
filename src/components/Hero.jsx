@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
-import { ShieldCheck, Apple, Play } from 'lucide-react'
+import { ShieldCheck, Apple, Play, Briefcase, Rocket, Building2 } from 'lucide-react'
 import InvoiceMock from './InvoiceMock'
-import { CONTACT } from '../data'
+import { CONTACT, SEGMENTOS } from '../data'
+
+const SEGMENT_ICONS = { Briefcase, Rocket, Building2 }
 
 const easing = [0.16, 1, 0.3, 1]
 
@@ -35,8 +37,8 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: easing, delay: 0.05 }}
             className="mt-6 font-display text-[2.6rem] font-extrabold leading-[1.04] tracking-tight text-navy text-balance sm:text-6xl"
           >
-            La plataforma contable que{' '}
-            <span className="text-teal-600">factura por ti</span>.
+            Factura, firma y cobra{' '}
+            <span className="text-teal-600">en un solo lugar</span>.
           </motion.h1>
 
           <motion.p
@@ -45,10 +47,34 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: easing, delay: 0.12 }}
             className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft text-pretty"
           >
-            Amelia reúne tu facturación electrónica, contabilidad, inventario, cartera y nómina en un
-            solo sistema. Emite comprobantes autorizados por el SRI y envíalos por WhatsApp — desde
-            web, iPhone y Android.
+            Amelia reúne el facturador autorizado por el SRI, la firma electrónica y las
+            herramientas de tu negocio en un solo sistema — desde web, iPhone y Android.
+            Elige tu perfil y mira exactamente lo que necesitas.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: easing, delay: 0.15 }}
+            className="mt-6 flex flex-wrap gap-2"
+            role="group"
+            aria-label="Elige tu perfil"
+          >
+            {SEGMENTOS.map((s) => {
+              const Icon = SEGMENT_ICONS[s.icon]
+              return (
+                <a
+                  key={s.id}
+                  href="#soluciones"
+                  onClick={() => window.dispatchEvent(new CustomEvent('amelia:segment', { detail: s.id }))}
+                  className="inline-flex items-center gap-2 rounded-full border border-surface-line bg-white px-4 py-2 text-sm font-semibold text-navy shadow-soft transition-colors hover:border-teal-400 hover:text-teal-700"
+                >
+                  <Icon size={15} className="text-teal-600" aria-hidden="true" />
+                  {s.label}
+                </a>
+              )
+            })}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 18 }}

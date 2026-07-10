@@ -2,14 +2,14 @@ import { Sparkles, X } from 'lucide-react'
 import { CONTACT } from '../data'
 
 export default function AnnouncementBar({ onClose }) {
-  const wa = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Quiero activar Amelia con la capacitación sin costo de este mes.')}`
+  const wa = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hola, quiero información del Combo Promo Amelia.')}`
   return (
     <div className="relative z-[60] bg-navy text-white">
       <div className="container-xl flex h-10 items-center justify-center gap-2 text-center text-xs sm:text-sm">
         <Sparkles size={14} className="hidden shrink-0 text-teal-300 sm:block" aria-hidden="true" />
         <p className="truncate">
-          <span className="font-semibold">Este mes:</span> activa tu cuenta y recibe configuración y
-          capacitación{' '}
+          <span className="font-semibold">Combo Promo Amelia:</span> arma tu combo según tu perfil
+          con capacitación{' '}
           <span className="font-semibold text-teal-300">sin costo</span>.
         </p>
         <a

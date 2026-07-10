@@ -4,9 +4,14 @@ import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
 import { NAV, CONTACT } from '../data'
 
-export default function Header() {
+export default function Header({ isHome = true, current = null }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const base = import.meta.env.BASE_URL
+
+  // En subpáginas las anclas apuntan de vuelta a la landing.
+  const hrefFor = (item) =>
+    item.type === 'page' ? base + item.href : isHome ? item.href : base + item.href
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -31,20 +36,26 @@ export default function Header() {
       }`}
     >
       <div className="container-xl flex h-[4.5rem] items-center justify-between gap-6">
-        <a href="#inicio" aria-label="Amelia — inicio" className="shrink-0">
+        <a href={isHome ? '#inicio' : base} aria-label="Amelia — inicio" className="shrink-0">
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
-          {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-ink-soft transition-colors hover:text-teal-700"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Principal">
+          {NAV.map((item) => {
+            const isCurrent = item.type === 'page' && current && item.href.startsWith(current)
+            return (
+              <a
+                key={item.href}
+                href={hrefFor(item)}
+                aria-current={isCurrent ? 'page' : undefined}
+                className={`text-sm font-medium transition-colors hover:text-teal-700 ${
+                  isCurrent ? 'font-semibold text-teal-700' : 'text-ink-soft'
+                }`}
+              >
+                {item.label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -80,7 +91,7 @@ export default function Header() {
               {NAV.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={hrefFor(item)}
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-3 py-3 text-base font-medium text-ink hover:bg-white"
                 >

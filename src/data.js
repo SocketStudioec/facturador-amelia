@@ -1,14 +1,166 @@
 // Contenido del sitio — Amelia · Plataforma Contable (un producto de Begroup)
 // Información derivada del código real (frontend Angular + backend Node/Express) y de begroupec.com.
 
+// type: 'page' = página propia (relativa al BASE_URL); 'anchor' = sección de la landing
 export const NAV = [
-  { label: 'Plataforma', href: '#plataforma' },
-  { label: 'Módulos', href: '#modulos' },
-  { label: 'Facturación', href: '#facturacion' },
-  { label: 'Calculadora', href: '#calculadora' },
-  { label: 'Planes', href: '#planes' },
-  { label: 'Partners', href: '#partners' },
+  { label: 'Contadores', href: 'contadores/', type: 'page' },
+  { label: 'Emprendedores', href: 'emprendedores/', type: 'page' },
+  { label: 'Empresas', href: 'b2b/', type: 'page' },
+  { label: 'Combo Promo', href: '#combo', type: 'anchor' },
+  { label: 'Módulos', href: '#modulos', type: 'anchor' },
+  { label: 'Partners', href: '#partners', type: 'anchor' },
 ]
+
+// Video promocional de la landing (como en begroupec.com/partners).
+// Pon el ID de YouTube del video oficial cuando esté listo; mientras tanto la
+// portada de marca enlaza al canal de Begroup.
+export const VIDEO = {
+  eyebrow: 'Conoce Amelia',
+  title: 'Mira el Combo Promo en acción',
+  desc: 'En un par de minutos entiende cómo Amelia factura, firma y organiza tu negocio — y qué combo te conviene según tu perfil.',
+  youtubeId: '',
+  channel: 'https://www.youtube.com/@BeGroupSAS',
+}
+
+// ── Campaña Combo Promo Amelia ─────────────────────────────────────────────
+// 3 audiencias, cada una con productos, beneficios y CTA propios.
+export const SEGMENTOS = [
+  {
+    id: 'contadores',
+    label: 'Soy contador',
+    title: 'Contadores',
+    headline: 'Todos tus clientes en un solo panel',
+    desc: 'Administra la facturación y las obligaciones de toda tu cartera desde una cuenta multiempresa, con precios preferenciales y opción white-label.',
+    icon: 'Briefcase',
+    productos: [
+      { name: 'Panel multiempresa', desc: 'Cambia de cliente en un clic; cada empresa con sus establecimientos y puntos de emisión.', icon: 'LayoutPanelLeft' },
+      { name: 'Declaraciones', desc: 'Prepara las declaraciones del SRI con la información que ya está registrada en el sistema.', icon: 'CalendarCheck' },
+      { name: 'Firmador PDF', desc: 'Firma electrónicamente contratos, oficios y anexos de tus clientes sin salir de Amelia.', icon: 'PenTool' },
+      { name: 'Archivador Digital', desc: 'XML, RIDE y respaldos de cada cliente organizados y siempre disponibles.', icon: 'Archive' },
+      { name: 'Estados de cuenta vs facturación', desc: 'Cruza los movimientos bancarios de tu cliente contra lo que facturó y detecta diferencias.', icon: 'Scale' },
+      { name: 'Bancarización SRI', desc: 'Controla que los pagos estén sustentados por el sistema financiero como exige la norma.', icon: 'Landmark' },
+    ],
+    beneficios: [
+      'Precios preferenciales por volumen, sin pago anticipado',
+      'White-label: atiende con tu propia marca',
+      'Soporte y capacitación dedicados para tu equipo',
+    ],
+    cta: 'Quiero mi panel de contador',
+    waText: 'Hola, soy contador y quiero el panel multiempresa de Amelia para mis clientes.',
+    slug: 'contadores',
+    sustantivo: 'un contador',
+    pageTitle: 'Amelia para Contadores · Panel multiempresa, declaraciones y firmador PDF',
+    pageDesc: 'Administra toda tu cartera de clientes con Amelia: panel multiempresa, declaraciones SRI, firmador PDF, archivador digital, bancarización y estados de cuenta vs facturación. Precios preferenciales white-label.',
+    heroNote: 'Programa para profesionales contables · precios preferenciales de partner',
+    modulosNombres: ['Firmador PDF', 'Declaraciones', 'Archivador Digital', 'Estados de cuenta vs facturación', 'Bancarización', 'Compras'],
+    destacadosNombres: ['Gastos personales y deducibles', 'Archivador Digital', 'Bancarización SRI'],
+    comboId: 'combo-contador',
+    testimonioIndex: 1,
+  },
+  {
+    id: 'emprendedores',
+    label: 'Soy emprendedor',
+    title: 'Emprendedores',
+    headline: 'Factura y vende desde el primer día',
+    desc: 'Todo lo que un negocio que empieza necesita: facturador autorizado por el SRI, firma electrónica y presencia digital, sin conocimientos contables.',
+    icon: 'Rocket',
+    productos: [
+      { name: 'Facturador', desc: 'Emite facturas autorizadas por el SRI desde el celular y envíalas por WhatsApp.', icon: 'FileText' },
+      { name: 'Firma Electrónica', desc: 'Obtén tu firma con vigencia de 1 a 5 años y déjala lista en Amelia el mismo día.', icon: 'Fingerprint' },
+      { name: 'Página Web', desc: 'Tu negocio en internet con dominio propio, lista para compartir y recibir pedidos.', icon: 'Globe' },
+      { name: 'Catálogo Digital', desc: 'Publica tus productos con fotos y precios; tus clientes piden por WhatsApp.', icon: 'BookOpen' },
+      { name: 'Bloc Digital', desc: 'Apunta las ventas del día y conviértelas en comprobantes cuando lo necesites.', icon: 'NotebookPen' },
+      { name: 'Dashboard de impuestos', desc: 'Si eres RIMPE o Negocio Popular, ve cuánto impuesto llevas generado en el año.', icon: 'Gauge' },
+    ],
+    beneficios: [
+      'Sin pago anticipado y sin permanencia',
+      'Registra gastos personales y deducibles para pagar menos renta',
+      'Funciona en web, iPhone y Android con la misma cuenta',
+    ],
+    cta: 'Empieza a facturar hoy',
+    waText: 'Hola, soy emprendedor y quiero empezar a facturar con Amelia.',
+    slug: 'emprendedores',
+    sustantivo: 'un emprendedor',
+    pageTitle: 'Amelia para Emprendedores · Facturador SRI, firma electrónica y página web',
+    pageDesc: 'Empieza a facturar y vender hoy: facturador autorizado por el SRI, firma electrónica, página web con catálogo, Bloc Digital y dashboard de impuestos para RIMPE y Negocio Popular. Sin pago anticipado.',
+    heroNote: 'Sin conocimientos contables · sin pago anticipado ni permanencia',
+    modulosNombres: ['Facturador', 'Bloc Digital', 'Archivador Digital', 'Compras', 'Inventarios', 'Declaraciones'],
+    destacadosNombres: ['Dashboard con impuesto generado', 'Gastos personales y deducibles', 'Facturación recurrente'],
+    comboId: 'combo-emprendedor',
+    testimonioIndex: 0,
+  },
+  {
+    id: 'b2b',
+    label: 'Soy empresa',
+    title: 'Empresas · B2B',
+    headline: 'Operación completa para tu empresa',
+    desc: 'Facturación de alto volumen, cobros recurrentes, inventarios y control financiero para empresas con equipos, sucursales y procesos.',
+    icon: 'Building2',
+    productos: [
+      { name: 'Facturación recurrente', desc: 'Programa cobros automáticos de suscripciones, arriendos y servicios mensuales.', icon: 'Repeat' },
+      { name: 'Factura reembolso', desc: 'Emite facturas por reembolso de gastos con el detalle que exige el SRI.', icon: 'ReceiptText' },
+      { name: 'Inventarios', desc: 'Stock, kardex y costos por bodega, conectados a tus compras y ventas.', icon: 'Boxes' },
+      { name: 'Compras', desc: 'Importa tus comprobantes de compra directo del SRI y mantén todo al día.', icon: 'ShoppingCart' },
+      { name: 'Estados de cuenta vs facturación', desc: 'Concilia lo que entra al banco contra lo que factura tu empresa.', icon: 'Scale' },
+      { name: 'Usuarios y sucursales', desc: 'Múltiples usuarios, establecimientos y puntos de emisión bajo control.', icon: 'Users' },
+    ],
+    beneficios: [
+      'Bancarización SRI: pagos sustentados y auditables',
+      'Archivador Digital con los respaldos de toda la operación',
+      'Acompañamiento en la implementación y soporte prioritario',
+    ],
+    cta: 'Agenda una demo',
+    waText: 'Hola, quiero una demo de Amelia para mi empresa.',
+    slug: 'b2b',
+    sustantivo: 'tu empresa',
+    pageTitle: 'Amelia para Empresas · Facturación recurrente, reembolsos e inventarios',
+    pageDesc: 'Soluciones B2B de Amelia: facturación de alto volumen, cobros recurrentes, factura reembolso, inventarios, compras, bancarización SRI y usuarios por sucursal. Implementación acompañada y soporte prioritario.',
+    heroNote: 'Implementación acompañada · soporte prioritario para tu equipo',
+    modulosNombres: ['Facturador', 'Inventarios', 'Compras', 'Estados de cuenta vs facturación', 'Bancarización', 'Archivador Digital'],
+    destacadosNombres: ['Facturación recurrente', 'Factura reembolso', 'Bancarización SRI'],
+    comboId: 'combo-empresa',
+    testimonioIndex: 2,
+  },
+]
+
+// Combos de la campaña — sin precio público: el precio se cierra por WhatsApp.
+export const COMBOS = {
+  eyebrow: 'Campaña por tiempo limitado',
+  title: 'Combo Promo Amelia',
+  desc: 'Arma tu combo según tu perfil y paga menos que contratando cada producto por separado. Sin pago anticipado y con capacitación incluida.',
+  items: [
+    {
+      id: 'combo-emprendedor',
+      name: 'Combo Emprendedor',
+      para: 'Para quien empieza a vender',
+      incluye: ['Facturador Amelia', 'Firma electrónica', 'Página web con catálogo', 'Bloc Digital'],
+      beneficio: 'Arranca a facturar y vender en línea el mismo día, con todo configurado por nosotros.',
+      cta: 'Quiero este combo',
+      waText: 'Hola, me interesa el Combo Emprendedor de Amelia (facturador + firma + página web).',
+      highlight: true,
+    },
+    {
+      id: 'combo-contador',
+      name: 'Combo Contador',
+      para: 'Para profesionales con cartera de clientes',
+      incluye: ['Panel multiempresa', 'Declaraciones', 'Firmador PDF', 'Archivador Digital'],
+      beneficio: 'Atiende a más clientes en menos tiempo y gana con precios preferenciales de partner.',
+      cta: 'Quiero este combo',
+      waText: 'Hola, soy contador y me interesa el Combo Contador de Amelia.',
+      highlight: false,
+    },
+    {
+      id: 'combo-empresa',
+      name: 'Combo Empresa',
+      para: 'Para operaciones con volumen',
+      incluye: ['Facturación de alto volumen', 'Facturación recurrente', 'Inventarios y compras', 'Bancarización SRI'],
+      beneficio: 'Centraliza facturación, cobros e inventario con soporte prioritario para tu equipo.',
+      cta: 'Hablar con un asesor',
+      waText: 'Hola, me interesa el Combo Empresa de Amelia para mi negocio.',
+      highlight: false,
+    },
+  ],
+}
 
 export const CONTACT = {
   whatsapp: '593990000000',
@@ -26,23 +178,33 @@ export const SOCIAL = [
 ]
 
 export const STATS = [
-  { value: 'Todo‑en‑uno', label: 'factura, contabiliza y controla en un sistema' },
+  { value: 'Todo‑en‑uno', label: 'factura, firma, cobra y controla en un sistema' },
   { value: 'SRI', label: 'autorización de comprobantes en línea' },
   { value: 'Multiempresa', label: 'administra varias empresas y sucursales' },
   { value: 'Web · iOS · Android', label: 'la misma cuenta en todos tus dispositivos' },
 ]
 
-// Módulos reales de la plataforma (derivados del código de la app)
+// Módulos de la plataforma — campaña Combo Promo (sin Contabilidad, por decisión comercial)
 export const MODULOS = [
-  { name: 'Facturación electrónica', desc: 'Emite y autoriza comprobantes ante el SRI en segundos.', icon: 'FileText' },
-  { name: 'Contabilidad', desc: 'Asientos, mayores y estados financieros siempre al día.', icon: 'BookOpen' },
-  { name: 'Inventario', desc: 'Controla stock, kardex y costos por producto.', icon: 'Boxes' },
-  { name: 'Cartera y cuentas por cobrar', desc: 'Gestiona deudas, abonos y conciliación de clientes.', icon: 'Wallet' },
-  { name: 'Compras y ventas', desc: 'Importa tus comprobantes de compra y venta del SRI.', icon: 'ShoppingCart' },
-  { name: 'Nómina', desc: 'Roles de pago y beneficios de tu equipo sin hojas de cálculo.', icon: 'Users' },
-  { name: 'Conciliación bancaria', desc: 'Cruza tus movimientos de banco con tu contabilidad.', icon: 'Landmark' },
-  { name: 'Facturación recurrente', desc: 'Cobros automáticos para suscripciones y servicios.', icon: 'Repeat' },
-  { name: 'Reportes y dashboard', desc: 'Indicadores de tu negocio en gráficos en tiempo real.', icon: 'BarChart3' },
+  { name: 'Facturador', desc: 'Emite y autoriza comprobantes ante el SRI en segundos, desde cualquier dispositivo.', icon: 'FileText' },
+  { name: 'Bloc Digital', desc: 'Apunta las ventas y pendientes del día y conviértelos en comprobantes cuando quieras.', icon: 'NotebookPen' },
+  { name: 'Compras', desc: 'Importa tus comprobantes de compra directo del SRI, sin digitar nada.', icon: 'ShoppingCart' },
+  { name: 'Archivador Digital', desc: 'XML, RIDE y documentos del negocio organizados, respaldados y buscables.', icon: 'Archive' },
+  { name: 'Firmador PDF', desc: 'Firma electrónicamente contratos y documentos PDF con validez legal.', icon: 'PenTool' },
+  { name: 'Declaraciones', desc: 'Prepara tus declaraciones del SRI con la información que ya registraste.', icon: 'CalendarCheck' },
+  { name: 'Estados de cuenta vs facturación', desc: 'Cruza tus movimientos bancarios contra lo facturado y detecta diferencias.', icon: 'Scale' },
+  { name: 'Bancarización', desc: 'Sustenta tus pagos por el sistema financiero como exige el SRI.', icon: 'Landmark' },
+  { name: 'Inventarios', desc: 'Stock, kardex y costos por producto y bodega, siempre al día.', icon: 'Boxes' },
+]
+
+// Funciones destacadas de la campaña
+export const DESTACADOS = [
+  { name: 'Facturación recurrente', desc: 'Programa una vez y Amelia emite y envía el comprobante cada mes: arriendos, suscripciones, servicios.', icon: 'Repeat' },
+  { name: 'Factura reembolso', desc: 'Emite facturas por reembolso de gastos con el detalle y los anexos que exige el SRI.', icon: 'ReceiptText' },
+  { name: 'Gastos personales y deducibles', desc: 'Registra tus gastos personales y proyecta tus deducibles para pagar menos impuesto a la renta.', icon: 'Wallet' },
+  { name: 'Archivador Digital', desc: 'Cada comprobante guarda su XML y RIDE automáticamente; encuentra cualquier documento en segundos.', icon: 'Archive' },
+  { name: 'Bancarización SRI', desc: 'Verifica que tus pagos estén sustentados por bancos cuando la norma lo exige y evita glosas.', icon: 'Landmark' },
+  { name: 'Dashboard con impuesto generado', desc: 'Si eres RIMPE o Negocio Popular, mira en tiempo real cuánto impuesto llevas generado en el año.', icon: 'Gauge' },
 ]
 
 export const DOCUMENTOS = [
@@ -130,9 +292,9 @@ export const PLANES = [
     highlight: true,
     features: [
       'Todos los comprobantes electrónicos',
-      'Contabilidad, inventario y cartera',
-      'Compras, ventas y conciliación bancaria',
-      'Reportes y dashboard en tiempo real',
+      'Inventarios, compras y archivador digital',
+      'Recurrente, reembolso y bancarización',
+      'Dashboard con impuesto generado (RIMPE)',
       'Múltiples usuarios y establecimientos',
     ],
     cta: 'Solicitar plan',
@@ -175,7 +337,7 @@ export const PARTNERS = {
 export const FAQ = [
   {
     q: '¿Amelia es solo un facturador?',
-    a: 'No. Amelia es una plataforma contable: además de la facturación electrónica incluye contabilidad, inventario, cartera, compras, ventas, nómina y conciliación bancaria en un mismo sistema.',
+    a: 'No. Además de la facturación electrónica, Amelia incluye Bloc Digital, compras, inventarios, archivador digital, firmador PDF, declaraciones, bancarización y estados de cuenta vs facturación en un mismo sistema.',
   },
   {
     q: '¿Los comprobantes son válidos ante el SRI?',
@@ -190,8 +352,8 @@ export const FAQ = [
     a: 'Completamente. Amelia está en web, iOS y Android con la misma cuenta. Puedes emitir y consultar desde donde estés.',
   },
   {
-    q: '¿Sirve para llevar la contabilidad de varias empresas?',
-    a: 'Sí. Amelia es multiempresa: ideal para contadores que administran la cartera de varios clientes desde un solo panel, con opción white‑label.',
+    q: '¿Sirve para manejar varias empresas?',
+    a: 'Sí. Amelia es multiempresa: ideal para contadores que administran la cartera de varios clientes desde un solo panel, con opción white‑label y precios preferenciales.',
   },
   {
     q: '¿Tengo que pagar por adelantado?',
