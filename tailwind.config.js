@@ -38,7 +38,7 @@ export default {
         ink: {
           DEFAULT: '#161B36',
           soft: '#3A416B',
-          muted: '#6B729A',
+          muted: '#5A6190',
         },
         surface: {
           DEFAULT: '#F6F8FE',

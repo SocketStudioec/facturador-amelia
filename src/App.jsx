@@ -1,27 +1,18 @@
+import { Suspense, lazy, useState } from 'react'
+import AnnouncementBar from './components/AnnouncementBar'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import TrustBar from './components/TrustBar'
-import Soluciones from './components/Soluciones'
 import VideoPromo from './components/VideoPromo'
-import ComboPromo from './components/ComboPromo'
-import Beneficios from './components/Beneficios'
-import Modulos from './components/Modulos'
-import Destacados from './components/Destacados'
-import Documentos from './components/Documentos'
-import ComoFunciona from './components/ComoFunciona'
-import Calculadora from './components/Calculadora'
-import Plataformas from './components/Plataformas'
-import Precios from './components/Precios'
-import TrustBadges from './components/TrustBadges'
-import Partners from './components/Partners'
-import Testimonios from './components/Testimonios'
-import FAQ from './components/FAQ'
-import BegroupStrip from './components/BegroupStrip'
-import CTA from './components/CTA'
-import Contacto from './components/Contacto'
+import Soluciones from './components/Soluciones'
 import Footer from './components/Footer'
 
+// Todo lo que está bajo el fold se carga en un solo chunk diferido.
+const BelowFold = lazy(() => import('./components/BelowFold'))
+
 export default function App() {
+  const [showBar, setShowBar] = useState(true)
+
   return (
     <>
       <a
@@ -30,28 +21,16 @@ export default function App() {
       >
         Saltar al contenido
       </a>
+      {showBar && <AnnouncementBar onClose={() => setShowBar(false)} />}
       <Header />
       <main>
         <Hero />
         <TrustBar />
         <VideoPromo />
         <Soluciones />
-        <ComboPromo />
-        <Modulos />
-        <Destacados />
-        <Beneficios />
-        <Documentos />
-        <ComoFunciona />
-        <Calculadora />
-        <Plataformas />
-        <Precios />
-        <TrustBadges />
-        <Partners />
-        <Testimonios />
-        <FAQ />
-        <BegroupStrip />
-        <CTA />
-        <Contacto />
+        <Suspense fallback={null}>
+          <BelowFold />
+        </Suspense>
       </main>
       <Footer />
     </>

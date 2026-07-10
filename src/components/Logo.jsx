@@ -6,7 +6,7 @@ const MARK = '/demo-aplicaciones/facturador-amelia/brand/amelia-mark.png'
  */
 export default function Logo({ tone = 'dark', withTagline = true, className = '' }) {
   const word = tone === 'light' ? '#FFFFFF' : '#1B2559'
-  const tag = tone === 'light' ? 'rgba(255,255,255,0.65)' : '#6B729A'
+  const tag = tone === 'light' ? 'rgba(255,255,255,0.72)' : '#5A6190'
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <img

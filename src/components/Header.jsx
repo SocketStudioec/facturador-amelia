@@ -36,7 +36,7 @@ export default function Header({ isHome = true, current = null }) {
       }`}
     >
       <div className="container-xl flex h-[4.5rem] items-center justify-between gap-6">
-        <a href={isHome ? '#inicio' : base} aria-label="Amelia — inicio" className="shrink-0">
+        <a href={isHome ? '#inicio' : base} className="shrink-0">
           <Logo />
         </a>
 
